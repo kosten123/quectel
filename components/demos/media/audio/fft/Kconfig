@@ -1,0 +1,5 @@
+menu "Demos::Media::Audio::Fft"
+	config FFT_TEST
+		bool "Enable FFT Test"
+		default n
+endmenu

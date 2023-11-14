@@ -1,0 +1,52 @@
+#TODO add depens for CONFIG_HOST (bk7231u)
+menu "Lwip_intf_v2_0"
+
+	config COMPONENTS_MOBILE_CONNECT_SAP_STATISTICS
+		bool "Enable Components Mobile Connect Sap Statistics"
+		default n
+		help
+			Statistics mobile connect sap time
+
+	config LWIP
+		bool "Enable Lwip"
+		default y
+
+	menu "Modify Lwip Config"
+		depends on LWIP
+
+		config DHCP
+			bool "Enable DHCP"
+			default y
+
+		config AUTOIP
+			bool "Enable AUTOIP"
+			default n
+
+		config MDNS
+			bool "Enable MDNS"
+			default n
+
+		config TASK_LWIP_PRIO
+			int "Set Task Lwip Prio"
+			range 1 10
+			default 4
+			help
+				Priority of LwIP task
+
+		#TODO optimize it
+		choice LWIP_MEM
+			prompt "Select Lwip Mem Policy"
+			default LWIP_MEM_DEFAULT
+
+			config LWIP_MEM_DEFAULT
+				bool "LWIP_MEM_DEFAULT"
+				help
+					Default Memory Policy
+			config LWIP_MEM_REDUCE
+				bool "LWIP_MEM_REDUCE"
+				help
+					Reduced Memory Policy
+		endchoice
+	endmenu
+
+endmenu

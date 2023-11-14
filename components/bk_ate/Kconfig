@@ -1,0 +1,24 @@
+menu "Bk_ate"
+
+	config ATE
+		bool "Enable ATE"
+		default n
+		help
+			Enable Automatic Test
+
+        config ATE_GPIO_ID
+		depends on ATE
+		int "Set ATE GPIO ID"
+                default 0
+
+        config ATE_GPIO_PULL_UP
+		depends on ATE
+                bool "Enable ATE GPIO Pull Up"
+                default y
+
+	config ATE_TEST
+		depends on ATE
+                bool "Enable ATE Test"
+                default n
+
+endmenu

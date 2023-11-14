@@ -1,0 +1,7 @@
+menu "Demos::Media::Lcd::Picture_display"
+	config LCD_TEST
+		bool "Enable Lcd Test"
+		default n
+		help
+			Enable lcd demos
+endmenu

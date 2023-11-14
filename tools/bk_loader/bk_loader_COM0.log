@@ -1,0 +1,48 @@
+
+
+
+=====================================================================
+ cmdline: |./bk_loader download -p 0 -b 1500000 --mainBin-multi all-app.bin@0x0-0x1f6200 |
+ bk_loader version 2.0.9.1: build @May  5 2023 19:45:12 
+ 2023-06-13 10:58:53.454    begin programm... 
+ 2023-06-13 10:58:53.522    Current port : /dev/ttyUSB0 + BaudRate : 115200 connect success
+ 2023-06-13 10:58:53.722    do_reset_signal : 1
+ 2023-06-13 10:58:53.723    Getting Bus...
+ 2023-06-13 10:59:09.087    Gotten Bus...
+ 2023-06-13 10:59:09.103    Got ChipId: 0x72560001
+
+ 2023-06-13 10:59:09.106    Current Chip is : BK7256
+ 2023-06-13 10:59:09.134    current baudrate : 1500000 seccess
+ 2023-06-13 10:59:09.137    Got FLashMID: 0x1665c8
+
+ 2023-06-13 10:59:09.142    Unprotecting Flash
+ 2023-06-13 10:59:09.147    Unprotected Flash ->pass
+ 2023-06-13 10:59:09.147    [ 0 ] file_path : all-app.bin
+ 2023-06-13 10:59:09.147    [ 0 ] file_length : 0x1f6200 (2008 KB)
+ 2023-06-13 10:59:09.147    [ 0 ] file_crc : 0x74b1b9a3
+ 2023-06-13 10:59:09.147    Begin EraseFlash
+ 2023-06-13 10:59:09.149    Handling file end
+ 2023-06-13 10:59:09.243    Handled file end
+ 2023-06-13 10:59:09.243    Start 4K Erase
+ 2023-06-13 10:59:09.243    End 4K Erase
+ 2023-06-13 10:59:09.243    Start 64K Erase
+ 2023-06-13 10:59:13.935    End 64K Erase
+ 2023-06-13 10:59:13.935    EraseFlash ->pass
+ 2023-06-13 10:59:13.938    Begin WriteFlash...
+ 2023-06-13 10:59:39.959    WriteFlash ->pass
+ 2023-06-13 10:59:39.973    Enprotect pass
+ 2023-06-13 10:59:40.004    Boot_Reboot
+
+ 2023-06-13 10:59:40.062    Total Test Time : 30.925 s
+ 2023-06-13 10:59:40.062    Writing Flash OK                             
+
+ 2023-06-13 10:59:40.062    
+==============================================================
+     _             (done)
+    | |                 
+  __| | ___  _ __   ___ 
+ / _  |/ _ \|  _ \ / _ \
+| (_| | (_) | | | |  __/
+ \__,_|\___/|_| |_|\___|
+{All Finished Successfully}
+

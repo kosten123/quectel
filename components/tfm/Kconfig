@@ -1,0 +1,52 @@
+menu "Tfm"
+	config TFM
+		bool "Enable TFM"
+		default n
+
+	menu "Modify TFM Config"
+		depends on TFM
+
+		config TFM_BUILD_TYPE
+			string "Define Tfm Build Type"
+			default "release"
+			help
+				build type: debug, release or minsizerel
+
+		config TFM_FPGA
+			string "Define Tfm FPGA"
+			default "ON"
+			help
+				Enable FPGA: ON/OFF
+
+		config TFM_TEST_S
+			depends on BUILD_TFM_S
+			string "Define Tfm Test S"
+			default "ON"
+			help
+				Enable to TFM secure bin test: ON/OFF
+
+		config TFM_TEST_NS
+			string "Define Tfm Test NS"
+			default "ON"
+			help
+				Enable to TFM non-secure bin test: ON/OFF
+
+		config TFM_BL2_LOG_LEVEL
+			string "Define Tfm Bl2 Log Level"
+			default "DEBUG"
+			help
+				Set BL2 log level: OFF/ERROR/WARNING/INFO/DEBUG
+
+		config OTP_NV_COUNTERS_RAM_EMULATION
+			string "Define Otp Nv Counters Ram Emulation"
+			default "ON"
+			help
+				Enable OTP/NV counter RAM emulation: ON/OFF
+
+		config PLATFORM_DEFAULT_OTP_WRITEABLE
+			string "Define Platform Default Otp Writeable"
+			default "ON"
+			help
+				Enable platform default OTP writable: ON/OFF
+	endmenu
+endmenu

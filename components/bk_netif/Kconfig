@@ -1,0 +1,7 @@
+menu "Bk_netif"
+
+	config BK_NETIF
+		bool "Enable Bk Netif" 
+		default y
+
+endmenu

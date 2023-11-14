@@ -1,0 +1,24 @@
+#TODO may need to remove this component!
+menu "BK_system"
+
+	choice BASE_MAC_SRC
+		prompt "Select Base Mac Source"
+		default NEW_MAC_POLICY
+
+		config BASE_MAC_FROM_EFUSE
+			bool "BASE_MAC_FROM_EFUSE"
+		config BASE_MAC_FROM_RF_OTP_FLASH
+			bool "BASE_MAC_FROM_RF_OTP_FLASH"
+		config NEW_MAC_POLICY
+			bool "NEW_MAC_POLICY"
+	endchoice
+
+	config RANDOM_MAC_ADDR
+        bool "Enable Random Mac Addr"
+        default n
+
+	config BK_MAC_ADDR_CHECK
+		bool "Enable Beken Mac Addr Check"
+		default n
+
+endmenu

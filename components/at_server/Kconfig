@@ -1,0 +1,7 @@
+menu "At_server"
+
+	config AT
+		bool "Enable At"
+		default n
+
+endmenu

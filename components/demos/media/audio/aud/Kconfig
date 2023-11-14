@@ -1,0 +1,5 @@
+menu "Demos::Media::Audio::Aud"
+	config AUDIO_TEST
+		bool "Enable Audio Test"
+		default n
+endmenu

@@ -1,0 +1,104 @@
+menu "Bk_usb"
+
+	config USB
+		bool "Enable Usb"
+		default n
+
+	menu "Modify Usb Config"
+		depends on USB
+
+		#TODO HOST/DEVICE mode mutual exclusive???
+		choice USB_MODE
+			prompt "Select Usb Host Mode"
+			default USB_HOST
+
+			config USB_HOST
+				bool "USB_HOST"
+				help
+					USB Host Mode
+			config USB_DEVICE
+				bool "USB_DEVICE"
+				help
+					USB Device Mode
+		endchoice
+
+		choice USB_PORT
+			prompt "Select Usb Port"
+			default USB2_PORT
+			
+			config USB1_PORT
+				bool "USB1_PORT"
+			config USB2_PORT
+				bool "USB2_PORT"
+		endchoice
+
+		config TASK_USB_PRIO
+			int "Set Task Usb Prio"
+			range 1 10
+			default 5
+			help
+				Priority of USB task
+
+		config USB_MSD
+			bool "Enable Usb Msd"
+			default y
+
+		config USB_HID
+			bool "Enable Usb Hid"
+			default n
+
+		config USB_CCD
+			bool "Enable Usb Ccd"
+			default n
+
+		config USB_UVC
+			bool "Enable Usb Uvc"
+			default n
+
+		config USB_UVC_DEBUG
+			bool "Enable Usb Uvc Debug"
+			default n
+
+		config USB_UAC
+			bool "Enable Usb Uac"
+			default n
+
+		menu "Modify Usb Uac Config"
+			depends on USB_UAC
+
+			config USB_UAC_DEBUG
+				bool "Enable Usb Uac Debug"
+				default n
+
+			config USB_UAC_MIC
+				bool "Enable Usb Uac Mic"
+				default n
+
+			config USB_UAC_SPEAKER
+				bool "Enable Usb Uac Speaker"
+				default n
+
+		endmenu
+
+		config USB_CHARGE
+			bool "Enable Usb Charge"
+			default n
+
+	endmenu
+
+	menu "Modify Dsp Config"
+
+		config DSP
+			bool "Enable Dsp"
+			default n
+
+		#TODO delete it
+		config DSP_SRC_ADD
+			hex "Set Dsp Src Add"
+			default 0x130000
+			help
+				set dsp source address
+
+	endmenu
+
+endmenu

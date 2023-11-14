@@ -1,0 +1,7 @@
+menu "Temp_detect"
+	config TEMP_DETECT
+		bool "Enable Temp Detect"
+		default n
+		help
+			Enable temperature detect
+endmenu
